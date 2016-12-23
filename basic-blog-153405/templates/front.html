@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Udacity Blog</title>
+        <div>
+            <h1>Personal Blog</h1>
+        </div>
+    </head>
+    <body>
+        {% for post in posts %}
+            <div>
+                <h3>{{post.subject}}</h3>
+            </div>
+
+            <hr>
+            <pre>
+                {{post.content}}
+            </pre>
+        {% endfor %}
+    </body>
+</html>

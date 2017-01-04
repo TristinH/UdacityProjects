@@ -1,23 +1,12 @@
 #!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
 
 import os
 import webapp2
 import jinja2
+import re
+import string
+import random
+import hashlib
 
 from google.appengine.ext import db
 
@@ -36,10 +25,20 @@ class Handler(webapp2.RequestHandler):
     def render(self, template, **kw):
         self.write(self.render_str(template, **kw))
 
+#class to store a single blog post
 class BlogPost(db.Model):
+    user = db.IntegerProperty(required = True)
     subject = db.StringProperty(required = True)
     content = db.TextProperty(required = True)
     created = db.DateTimeProperty(auto_now_add = True)
+
+#class to store user information
+class User(db.Model):
+    username = db.StringProperty(required = True)
+    password = db.StringProperty(required = True)
+    salt = db.StringProperty(required = True)
+    created = db.DateTimeProperty(auto_now_add = True)
+
 
 class MainPageHandler(Handler):
     def get(self):
@@ -54,8 +53,9 @@ class NewPostHandler(Handler):
         subject = self.request.get("subject")
         content = self.request.get("content")
 
+        #check if the user entered both required fields
         if subject and content:
-            #enter blog in database and redirect to home page
+            #enter blog in database and redirect to individual blog page
             new_post = BlogPost(subject = subject, content = content)
             new_post.put()
             self.redirect('/%s' % str(new_post.key().id()))
@@ -64,13 +64,45 @@ class NewPostHandler(Handler):
             self.render("newpost.html", subject = subject, content = content, error = error)
 
 class SinglePostHandler(Handler):
+    #find the individual blog post and display it on its own page
     def get(self, post_id):
         key = db.Key.from_path('BlogPost', int(post_id))
         post = db.get(key)
         self.render("singlepost.html", post = post)
 
+class RegistrationPageHandler(Handler):
+    def get(self):
+        self.render("registration.html")
+
+    def post(self):
+        username = self.request.get("username")
+        password = self.request.get("password")
+        verify = self.request.get("verify")
+        email = self.request.get("email")
+
+        #check if all required fields are entered
+        if username and password and verify:
+            #if the user enters an email, make sure it is valid
+            if email and not re.match(r'.*@.*', email):
+                error = "The Email entered is not valid"
+                self.render("registration.html", username = username, email = email, error = error)
+            #if the passwords do not match alert the user
+            elif not (password == verify):
+                error = "The passwords do not match"
+                self.render("registration.html", username = username, email = email, error = error)
+            else:
+                self.write("Thank you")
+        else:
+            error = "You must enter a username and password"
+            self.render("registration.html", username = username, email = email, error = error)
+
+    #function to encrypt a password to store it in the database
+    def secure_password(self, password):
+
+
 app = webapp2.WSGIApplication([
     ('/', MainPageHandler),
     ('/newpost', NewPostHandler),
-    ('/([0-9]+)', SinglePostHandler)
+    ('/([0-9]+)', SinglePostHandler),
+    ('/register', RegistrationPageHandler)
 ], debug=True)

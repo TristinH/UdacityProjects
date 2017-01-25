@@ -1,19 +1,20 @@
 <!DOCTYPE HTML>
-<html>
+<HTML>
     <head>
-        <title>Post a new blog</title>
+        <title>Sign-in</title>
     </head>
     <body>
-        <h1>Create A New Blog Post</h1>
+        <h1>Login Form</h1>
+
         <form method="post">
             <label>
-                <div>Subject</div>
-                <input name="subject" type="text" value="{{subject}}">
+                <div>Username</div>
+                <input name="username" type="text" value={{username}}>
             </label>
 
             <label>
-                <div>Content</div>
-                <textarea name="content">{{content}}</textarea>
+                <div>Password</div>
+                <input name="password" type="password">
             </label>
 
             <div>
@@ -25,4 +26,4 @@
             </div>
         </form>
     </body>
-</html>
+</HTML>

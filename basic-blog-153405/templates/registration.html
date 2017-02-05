@@ -1,43 +1,39 @@
-<!DOCTYPE HTML>
-<HTML>
-    <head>
-        <title>Registration</title>
-    </head>
-    <body>
-        <h1>Registration Form</h1>
+{% extends "home.html" %}
 
-        <form method="post">
-            <label>
-                <div>Username</div>
-                <input name="username" type="text" value={{username}}>
-            </label>
+{% block content %}
+    <h1>Registration Form</h1>
 
-            <label>
-                <div>Password</div>
-                <input name="password" type="password">
-            </label>
+    <form method="post">
+        <label>
+            <div>Username</div>
+            <input name="username" type="text" value={{username}}>
+        </label>
 
-            <label>
-                <div>Retype Password</div>
-                <input name="verify" type="password">
-            </label>
+        <label>
+            <div>Password</div>
+            <input name="password" type="password">
+        </label>
 
-            <label>
-                <div>Email (optional)</div>
-                <input name="email" type="text" value={{email}}>
-            </label>
+        <label>
+            <div>Retype Password</div>
+            <input name="verify" type="password">
+        </label>
 
-            <div>
-                <input type="submit">
-            </div>
+        <label>
+            <div>Email (optional)</div>
+            <input name="email" type="text" value={{email}}>
+        </label>
 
-            <div>
-                <a href="/signin">Click Here If Already Registered</a>
-            </div>
+        <div>
+            <input type="submit">
+        </div>
 
-            <div>
-                {{error}}
-            </div>
-        </form>
-    </body>
-</HTML>
+        <div>
+            <a href="/signin">Click Here If Already Registered</a>
+        </div>
+
+        <div class="error">
+            {{error}}
+        </div>
+    </form>
+{% endblock %}

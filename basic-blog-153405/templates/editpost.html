@@ -1,32 +1,29 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Post a new blog</title>
-    </head>
-    <body>
-        <h1>Edit Your Blog Post</h1>
-        <form method="post">
-            <div name="user">
-                {{user}}
-            </div>
+{% extends "home.html" %}
 
-            <label>
-                <div>Subject</div>
-                <input name="subject" type="text" value="{{subject}}">
-            </label>
+{% block content %}
+    <h1>Edit Your Blog Post</h1>
+    <form method="post">
+        <div name="user">
+            {{user}}
+        </div>
 
-            <label>
-                <div>Content</div>
-                <textarea name="content">{{content}}</textarea>
-            </label>
+        <label>
+            <div>Subject</div>
+            <input name="subject" type="text" value="{{subject}}">
+        </label>
 
-            <div>
-                <input type="submit">
-            </div>
+        <label>
+            <div>Content</div>
+            <textarea name="content">{{content}}</textarea>
+        </label>
 
-            <div>
-                {{error}}
-            </div>
-        </form>
-    </body>
-</html>
+        <div>
+            <input type="submit">
+            <a href="/">Cancel</a>
+        </div>
+
+        <div class="error">
+            {{error}}
+        </div>
+    </form>
+{% endblock %}

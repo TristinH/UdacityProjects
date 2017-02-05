@@ -1,25 +1,36 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Udacity Blog</title>
+{% extends "home.html" %}
+
+{% block content %}
+    <div>
+        <h3>{{post.subject}}</h3>
+    </div>
+
+    <hr>
+    <div>
+        {{post.content}}
+    </div>
+
+    <div>
+        {{error}}
+    </div>
+    <br>
+
+    {% for comment in comments %}
         <div>
-            <a href="/">
-                <h1>Udacity Blog</h1>
-            </a>
-        </div>
-    </head>
-    <body>
-        <div>
-            <h3>{{post.subject}}</h3>
+            {{comment.username}}
         </div>
 
-        <hr>
-        <pre>
-            {{post.content}}
-        </pre>
+        <div>
+            {{comment.comment}}
+        </div>
 
         <div>
-            {{error}}
+            <a href="/commentedit/{{comment.key().id()}}">Edit</a>
+            <a href="/commentdelete/{{comment.key().id()}}">Delete</a>
         </div>
-    </body>
-</html>
+        <br>
+    {% endfor %}
+    <div>
+        <a href="/comment/{{post.key().id()}}">Add a Comment</a>
+    </div>
+{% endblock %}

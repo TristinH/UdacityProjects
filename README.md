@@ -1,2 +1,2 @@
 # UdacityProjects
-This project will consist of all the individual assignments I complete while studying through Udacity. 
+This Repo contains of all the individual projects I complete while studying through Udacity. 

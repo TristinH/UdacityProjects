@@ -1,0 +1,30 @@
+hr {
+    height: 5px;
+    border: none;
+    color: #7d97ad;
+    background-color: #7d97ad;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+.new-font {
+    font-family: "Lato", sans-serif;
+    color: #2d3c49;
+    font-weight: 300;
+}
+
+.name {
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.greyed-text {
+    color: #7d97ad;
+}
+

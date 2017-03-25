@@ -10,7 +10,7 @@ possible while providing unique images and text. Additionally, the page had to b
 screen.
 <br>
 <br>
-Repository Link: [https://github.com/TristinH/project-portfolio]
+Repository Link: https://github.com/TristinH/project-portfolio
 
 <br>
 <br>
@@ -22,9 +22,9 @@ delete their own posts. Passwords are stored securely with hashing and salting a
 processed. User sessions are tracked with the use of a secure cookie that is a hash of the user's id and a secret string. 
 <br>
 <br>
-Repository Link: (https://github.com/TristinH/multi-user-blog)
+Repository Link: https://github.com/TristinH/multi-user-blog
 <br>
-Appspot Link: (http://www.basic-blog-153405.appspot.com/)
+Deployed App Link: http://www.basic-blog-153405.appspot.com/
 
 <br>
 <br>
@@ -36,7 +36,7 @@ the database to use in an application. Additionally, there is a python utility c
 would need to run a swiss tournament such as checking player standings and matching players for a round.
 <br>
 <br>
-Repository Link: (https://github.com/TristinH/tournament-database-schema)
+Repository Link: https://github.com/TristinH/tournament-database-schema
 
 <br>
 <br>
@@ -48,4 +48,4 @@ perform all the major database operations (create, read, update, and delete) on 
 with Google's OAuth 2 service. Authorization is considered prior to any alteration to the database.  
 <br>
 <br>
-Repository Link: (https://github.com/TristinH/item-catalog)
+Repository Link: https://github.com/TristinH/item-catalog

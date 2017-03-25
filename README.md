@@ -10,7 +10,7 @@ possible while providing unique images and text. Additionally, the page had to b
 screen.
 <br>
 <br>
-Repository Link: (https://github.com/TristinH/project-portfolio)
+Repository Link: [https://github.com/TristinH/project-portfolio]
 
 <br>
 <br>
@@ -23,6 +23,7 @@ processed. User sessions are tracked with the use of a secure cookie that is a h
 <br>
 <br>
 Repository Link: (https://github.com/TristinH/multi-user-blog)
+<br>
 Appspot Link: (http://www.basic-blog-153405.appspot.com/)
 
 <br>

@@ -14,7 +14,7 @@ Repository Link: https://github.com/TristinH/project-portfolio
 
 <br>
 <br>
-                                    <h3>Multi User Blog</h3>
+<h3>Multi User Blog</h3>
 <h6>Description</h6>
 A fully functional blog with the ability to support many users. Users can make posts that are updated to the main page. Other users can 
 view those posts, like/unlike the posts, and create comments. Users can create accounts with a username and password. They can edit and 

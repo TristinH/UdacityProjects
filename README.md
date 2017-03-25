@@ -1,2 +1,7 @@
 # udacity-projects
-This Repo contains of all the individual projects I complete while studying through Udacity. 
+
+This Repo contains the links to all the individual projects I complete while completing the Udacity's Full Stack Web Developer Nanodegree.
+
+<h1>
+  Project Portfolio
+</h1>

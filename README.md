@@ -7,8 +7,7 @@ This Repo contains the links to all the individual projects I completed for Udac
 <h6>Description</h6>
 A simple web page exhibiting a few of the other projects. The goal of this project was to take a PDF mockup and transform it into HTML. 
 The layout of the mockup had to be matched as close as possible while providing unique images and text. Additionally, the page had to be 
-responsive when viewed on a tablet or mobile phone 
-screen.
+responsive for a pleasing look on tablet and mobile phone screens.
 <br>
 <br>
 Repository Link: https://github.com/TristinH/project-portfolio

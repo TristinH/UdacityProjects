@@ -18,6 +18,7 @@ delete their own posts. Passwords are stored securely with hashing and salting a
 processed. User sessions are tracked with the use of a secure cookie that is a hash of the user's id and a secret string. 
 
 [Repository Link](https://github.com/TristinH/multi-user-blog)
+
 [Deployed App Link](http://www.basic-blog-153405.appspot.com/)
 
 ### Tournament Database Schema

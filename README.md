@@ -49,3 +49,14 @@ party APIs to add functionality to the front end, using AJAX requests to load da
 design pattern to separate concerns. 
 
 [Repository Link](https://github.com/TristinH/neighborhood-map)
+
+### Linux Server Configuration
+
+A project to set up a server for a previous project (the item catalog application). The server was set up using Amazon Web Services.
+I created an instance online and configured the server from there. I configured the firewall to only allow certain connections to 
+increase the application security. I then installed all the components necessary to allow the server to serve the application. This
+project gave me great insight into how to perform system administration tasks. This is necessary for a full stack developer to know
+because development is only the first half of building a web application. Maintaining and monitoring the application is essential to
+its success.
+
+[Repository Link](https://github.com/TristinH/linux-server-configuration)

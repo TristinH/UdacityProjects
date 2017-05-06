@@ -1,4 +1,4 @@
-# Udacity Projects
+# Udacity Full Stack Nanodegree Projects
 
 This Repo contains the links to all the individual projects I completed for Udacity's Full Stack Web Developer Nanodegree.
 
